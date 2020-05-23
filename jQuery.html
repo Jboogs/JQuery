@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    </head>
+    
+
+
+        <script>
+            $(document).ready(function(){
+                $("html").append(
+                "<body>\
+                    <div id='container'>\
+                        <div id='inner'>\
+                            <h1>Basic jQuery DEMO!</h1>\
+                            <p id='one'>Click me to show h1 after its gone!</p>\
+                            <p id='two'>This paragraph was turned red with a CSS selector</p>\
+                            <p id='three'>click here to hide h1</p>\
+                        </div>\
+                    </div>\
+                </body>"
+                );
+                $("#two").css({"color":"red"});
+                $("#three").on("click", function() {
+                    $("h1").hide(700);
+                });
+                $("#one").click(function() {
+                    $("h1").show(500);
+                });
+
+                $("h1").click(function() {
+                    $("#inner").css({"border":"2px solid black"});
+                    alert('You clicked the h1 element');
+                });
+            });
+
+        </script>
+    
+</html>
